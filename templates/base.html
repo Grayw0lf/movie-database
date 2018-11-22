@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <title>
+        {% block title %}MyMDB{% endblock %}
+    </title>
+    <style>
+        .mymdb-masthead {
+          background-color: #EEEEEE;
+          margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="mymdb-masthead">
+        <div class="container">
+            <nav class="nav">
+                <div class="navbar-brand">MyMDB</div>
+                <a class="nav-link" href="{% url 'core:movie_list' %}">
+                    Movies
+                </a>
+                <a class="nav-link" href="{% url 'core:top_movies' %}">
+                    Top 10 Movies
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 mymdb-main">
+                {% block main %}{% endblock %}
+            </div>
+            <div class="col-sm-3 offset-sm-1 mymdb-sidebar">
+                {% block sidebar %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
